@@ -1,0 +1,9 @@
+@layer theme, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source("./");
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+.app-menu-icon::before {
+  /* bootstrap-icons 锁定 font-weight，用描边模拟加粗 */
+  -webkit-text-stroke: 0.3px currentColor;
+}

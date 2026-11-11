@@ -1,0 +1,118 @@
+.report-exam {
+  display: flex;
+  gap: 12px;
+  height: 100%;
+  overflow: hidden;
+
+  &__list {
+    flex: 0 0 25%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  &__report-list {
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  &__report-item {
+    cursor: pointer;
+    padding: 8px 12px !important;
+
+    &:hover {
+      background: var(--ant-color-fill-tertiary);
+    }
+  }
+
+  &__report-item-body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    min-width: 0;
+  }
+
+  &__report-title {
+    display: block;
+    line-height: 1.4;
+  }
+
+  &__report-desc {
+    display: block;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  &__main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  &__tabs {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+
+    .ant-tabs-content-holder,
+    .ant-tabs-body-holder {
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .ant-tabs-content,
+    .ant-tabs-tabpane,
+    .ant-tabs-body {
+      height: 100%;
+      min-height: 0;
+    }
+  }
+
+  &__pane {
+    height: 100%;
+    overflow: auto;
+
+    &--doc {
+      display: flex;
+      min-height: 0;
+      overflow: hidden;
+    }
+  }
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 4px 0;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__field-action {
+    display: flex;
+  }
+
+  &__doc-frame {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+  }
+
+  &__doc-loading {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

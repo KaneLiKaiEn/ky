@@ -1,0 +1,50 @@
+.floating-panel {
+  position: fixed;
+  z-index: 1100;
+  top: 24px;
+  right: 24px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 16px 14px;
+  border: 1px solid var(--app-theme-border);
+  border-radius: 8px;
+  background: var(--app-theme-bg-elevated);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  color: var(--app-theme-text);
+}
+
+.floating-panel__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 -8px 8px;
+  padding: 4px 8px;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+}
+
+.floating-panel__bar:active {
+  cursor: grabbing;
+}
+
+.floating-panel__title {
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.floating-panel__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--app-theme-text-secondary);
+  cursor: pointer;
+}

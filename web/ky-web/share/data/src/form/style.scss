@@ -1,0 +1,53 @@
+.data-adaptive-form.ant-form:not(.ant-form-vertical) {
+  [data-adaptive-form-row] {
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
+
+  // Keep the horizontal layout at Ant Design's mobile breakpoint as well.
+  .ant-form-item [data-adaptive-form-row] > .ant-form-item-label {
+    flex: 0 0 var(--data-form-label-width, auto);
+    width: auto;
+    max-width: 40%;
+    padding-block: 0;
+    overflow: visible;
+    white-space: normal;
+    text-align: end;
+
+    > label {
+      height: auto;
+      min-height: var(--ant-control-height, 32px);
+      max-width: 100%;
+      line-height: var(--ant-line-height, 1.5714285714);
+      white-space: normal;
+      overflow-wrap: anywhere;
+      // Wrap text with its marks/icons, while keeping intrinsic width changes
+      // observable when an already-loaded font or font family changes.
+      display: inline-block;
+      padding-block: calc(
+        (
+            var(--ant-control-height, 32px) - 1em *
+              var(--ant-line-height, 1.5714285714)
+          ) /
+          2
+      );
+      padding-inline-end: 8px;
+      box-sizing: border-box;
+
+      &::after {
+        margin-inline-end: 0;
+      }
+    }
+  }
+
+  .ant-form-item [data-adaptive-form-row] > .ant-form-item-control {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+    max-width: none;
+  }
+
+  .ant-form-item [data-adaptive-form-row] > .ant-form-item-label-left {
+    text-align: start;
+  }
+}

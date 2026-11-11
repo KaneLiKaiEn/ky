@@ -1,0 +1,34 @@
+name: MF dependency consistency
+
+on:
+  pull_request:
+    paths:
+      - 'mf-versions.json'
+      - 'scripts/**'
+      - '**/package.json'
+      - '**/package-lock.json'
+      - '.github/workflows/mf-dependencies.yml'
+  push:
+    paths:
+      - 'mf-versions.json'
+      - 'scripts/**'
+      - '**/package.json'
+      - '**/package-lock.json'
+      - '.github/workflows/mf-dependencies.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test dependency tooling
+        run: npm run mf:test
+      - name: Check all module manifests and lockfiles
+        run: npm run mf:check

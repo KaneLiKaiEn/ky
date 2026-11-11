@@ -1,0 +1,22 @@
+.bw-form {
+  .ant-form-item {
+    margin-bottom: 16px;
+    min-width: 0;
+  }
+  .ant-form-item-row {
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
+  .ant-form-item-label {
+    font-weight: 500;
+    overflow: visible;
+  }
+  .ant-form-item-control {
+    min-width: 0;
+  }
+  .ant-select,
+  .ant-input-number,
+  .ant-picker {
+    width: 100%;
+  }
+}

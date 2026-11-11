@@ -1,0 +1,118 @@
+.organization-page {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  padding: 12px;
+  box-sizing: border-box;
+
+  &__toolbar,
+  &__selection,
+  .organization-table-toolbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  &__toolbar,
+  .organization-table-toolbar {
+    justify-content: space-between;
+  }
+
+  &__select {
+    width: 360px;
+    max-width: 100%;
+  }
+
+  &__content {
+    flex: 1;
+    min-height: 0;
+    min-width: 0;
+    overflow: auto;
+    background: var(--organization-bg);
+    border: 1px solid var(--organization-border);
+    border-radius: 8px;
+    padding: 12px;
+  }
+
+  &__context {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .ant-tabs-content-holder {
+    min-width: 0;
+  }
+
+  .ant-alert {
+    margin-bottom: 12px;
+  }
+
+  .organization-table-toolbar {
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 12px;
+
+    &__selection {
+      width: 100%;
+    }
+
+    &__select {
+      width: 100%;
+    }
+
+    &__content {
+      padding: 12px;
+    }
+  }
+}
+
+.organization-table {
+  .ant-table-cell {
+    vertical-align: top;
+    overflow-wrap: anywhere;
+  }
+
+  .ant-select {
+    width: 100%;
+  }
+
+  .ant-form-item-explain {
+    font-size: 12px;
+  }
+
+  @media (min-width: 768px) {
+    input,
+    textarea {
+      scroll-margin-inline: 220px;
+    }
+  }
+}
+
+.organization-editable-cell {
+  margin-bottom: 0;
+}
+
+.organization-form {
+  .ant-form-item {
+    margin-bottom: 12px;
+  }
+
+  &__section.ant-divider {
+    margin: 8px 0 12px;
+    font-size: 14px;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 4px;
+  }
+}

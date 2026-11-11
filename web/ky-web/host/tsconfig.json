@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "comm/request": [
+        "./@mf-types/comm/request"
+      ],
+      "comm/session": [
+        "../share/comm/src/session.ts"
+      ],
+      "comm/theme": ["../share/comm/src/theme.ts"],
+      "comm/moduleContext": [
+        "../share/comm/src/moduleContext.ts"
+      ],
+      "comm/eventBus": [
+        "../share/comm/src/eventBus.ts"
+      ]
+    },
+    "rootDir": ".."
+  },
+  "include": [
+    "src"
+  ]
+}

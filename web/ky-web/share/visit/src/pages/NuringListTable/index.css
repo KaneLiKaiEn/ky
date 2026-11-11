@@ -1,0 +1,54 @@
+.nursing-matrix-table .ant-table-cell {
+  padding-top: 0.35rem !important;
+  padding-bottom: 0.35rem !important;
+}
+
+.nursing-matrix-table .ant-card-body {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.nursing-matrix-table .col-time {
+  width: 100px;
+  min-width: 100px;
+  max-width: 100px;
+}
+
+.nursing-matrix-table .col-time-header {
+  cursor: pointer;
+  user-select: none;
+  background-color: var(--app-theme-info-bg);
+}
+
+.nursing-matrix-table .col-time-header.is-source {
+  background-color: var(--app-theme-primary-bg);
+  border: 1px dashed var(--app-theme-primary);
+}
+
+.nursing-matrix-table .group-row td {
+  font-weight: 700;
+  color: var(--app-theme-primary);
+  background-color: var(--row-bg, var(--app-theme-primary-bg));
+}
+
+.nursing-matrix-table .item-cell {
+  background-color: var(--row-bg, transparent);
+}
+
+.nursing-matrix-table .edit-cell {
+  position: relative;
+  padding: 0 !important;
+}
+
+.nursing-matrix-table .edit-cell.is-out-of-range {
+  background-color: var(--app-theme-error-bg) !important;
+  color: var(--app-theme-error);
+  font-weight: 700;
+}
+
+.nursing-matrix-table .col-time:hover {
+  background-color: var(--app-theme-primary-bg-hover) !important;
+}

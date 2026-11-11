@@ -1,0 +1,4 @@
+{
+  "@module-federation/vite": "1.23.5",
+  "@module-federation/runtime": "2.9.2"
+}

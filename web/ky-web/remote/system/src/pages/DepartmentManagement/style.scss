@@ -1,0 +1,131 @@
+@use "../../styles/management-page";
+
+.department-page {
+  @include management-page.layout("department", $field-basis: 180px, $loading-height: 180px);
+
+  &__field--type {
+    flex: 0.7 1 150px;
+  }
+  &__field--department {
+    flex: 1.5 1 240px;
+  }
+  &__summary .ant-typography-secondary {
+    overflow-wrap: anywhere;
+  }
+  > .department-page__content > .ant-tabs .ant-tabs-content-holder {
+    display: none;
+  }
+  .ant-select,
+  .ant-picker {
+    min-width: 0;
+  }
+  input,
+  button,
+  .ant-select {
+    scroll-margin-block: 80px;
+  }
+  .ant-alert {
+    margin-bottom: 16px;
+  }
+}
+
+.department-form {
+  .ant-divider {
+    margin: 8px 0 16px;
+    font-size: 14px;
+  }
+  .ant-form-item {
+    margin-bottom: 16px;
+    min-width: 0;
+  }
+  .ant-form-item-control {
+    min-width: 0;
+  }
+  .ant-select {
+    width: 100%;
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 20px;
+  }
+  &__wide {
+    grid-column: 1 / -1;
+  }
+  &__actions {
+    position: sticky;
+    bottom: -20px;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding: 12px 0;
+    background: var(--department-bg);
+    border-top: 1px solid var(--department-border);
+    .ant-space {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+  }
+}
+.department-panel {
+  min-width: 0;
+}
+.department-link-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  .ant-typography {
+    margin: 0;
+  }
+}
+.department-link-picker {
+  min-width: 0;
+}
+.department-link-picker .ant-select {
+  width: 100%;
+}
+.department-link-table {
+  .ant-table-cell {
+    vertical-align: top;
+  }
+  .ant-form-item {
+    margin-bottom: 0;
+  }
+  .ant-form-item-explain {
+    font-size: 12px;
+  }
+}
+@media (min-width: 1440px) {
+  .department-form__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 767px) {
+  .department-page {
+    @include management-page.mobile;
+  }
+  .department-page__field {
+    flex-basis: 100%;
+  }
+  .department-form__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .department-form__actions {
+    bottom: -12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .department-page *,
+  .department-page *::before,
+  .department-page *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

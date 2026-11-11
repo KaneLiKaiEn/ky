@@ -1,0 +1,133 @@
+.login-page {
+  box-sizing: border-box;
+  height: var(--app-vh, 100vh);
+  min-height: var(--app-vh, 100vh);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  align-items: center;
+  align-items: safe center;
+  justify-content: flex-end;
+  padding: max(24px, env(safe-area-inset-top, 0px))
+    max(10%, env(safe-area-inset-right, 0px))
+    max(24px, env(safe-area-inset-bottom, 0px))
+    max(10%, env(safe-area-inset-left, 0px));
+  background-image: url("../../assets/images/login-bg-light.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &[data-theme="dark"] {
+    background-image: url("../../assets/images/login-bg-dark.png");
+  }
+
+  &__card {
+    box-sizing: border-box;
+    width: 420px;
+    max-width: 100%;
+    flex-shrink: 0;
+    padding: 48px 40px 36px;
+    background: color-mix(
+      in srgb,
+      var(--app-theme-bg-container) 92%,
+      transparent
+    );
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--app-theme-border);
+    border-radius: 16px;
+    box-shadow: 0 8px 40px
+      color-mix(in srgb, var(--app-theme-primary) 18%, transparent);
+  }
+
+  &__header {
+    margin-bottom: 36px;
+    text-align: center;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background: var(--app-theme-primary);
+    box-shadow: 0 4px 16px
+      color-mix(in srgb, var(--app-theme-primary) 35%, transparent);
+  }
+
+  &__logo-icon {
+    font-size: 30px;
+    color: #fff;
+  }
+
+  &__title {
+    margin: 0 !important;
+    color: var(--app-theme-text) !important;
+    letter-spacing: 2px;
+  }
+
+  &__subtitle {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+    color: var(--app-theme-text-secondary);
+  }
+
+  &__field-icon {
+    color: var(--app-theme-primary);
+  }
+
+  &__input {
+    height: 46px;
+    background: var(--app-theme-bg-fill-alter) !important;
+    border: 1.5px solid var(--app-theme-border) !important;
+    border-radius: 8px !important;
+  }
+
+  &__submit-item {
+    margin-top: 8px;
+    margin-bottom: 0 !important;
+  }
+
+  &__submit-btn {
+    height: 48px !important;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    border: none !important;
+    border-radius: 8px !important;
+    background: var(--app-theme-primary) !important;
+    box-shadow: 0 4px 14px
+      color-mix(in srgb, var(--app-theme-primary) 40%, transparent);
+
+    &:hover {
+      filter: brightness(1.08);
+    }
+  }
+
+  &__footer {
+    margin-top: 24px;
+    text-align: center;
+  }
+
+  &__copyright {
+    font-size: 12px;
+    color: var(--app-theme-text-secondary);
+  }
+
+  &__error {
+    margin-bottom: 20px;
+    overflow-wrap: anywhere;
+  }
+
+  @media (max-width: 767px) {
+    justify-content: center;
+    padding: max(20px, env(safe-area-inset-top, 0px)) 16px
+      max(20px, env(safe-area-inset-bottom, 0px));
+    &__card {
+      padding: 32px 24px 24px;
+    }
+  }
+}

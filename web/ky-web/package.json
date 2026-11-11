@@ -1,0 +1,16 @@
+{
+  "name": "web2",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "mf:check": "node scripts/mf-deps.mjs check",
+    "mf:upgrade": "node scripts/mf-deps.mjs upgrade",
+    "mf:test": "node --test scripts/mf-deps.test.mjs",
+    "dict:test": "node --test scripts/dict-migration.test.mjs",
+    "theme:check": "node scripts/theme-check.mjs",
+    "theme:test": "node --test scripts/theme-check.test.mjs"
+  }
+}

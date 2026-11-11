@@ -1,0 +1,4 @@
+/* Login and the visit playground retain document scrolling in standalone mode. */
+body {
+  overflow: auto;
+}

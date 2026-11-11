@@ -1,0 +1,191 @@
+@use "../../styles/management-page";
+
+.user-page {
+  @include management-page.layout("user");
+
+  &__field--user {
+    flex: 2 1 300px;
+  }
+  &__invalid {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 32px;
+  }
+  &__invalid label {
+    cursor: pointer;
+  }
+  &__summary .ant-typography-secondary {
+    overflow-wrap: anywhere;
+  }
+  .ant-tabs-content-holder {
+    display: none;
+  }
+  .ant-select,
+  .ant-picker {
+    min-width: 0;
+  }
+  input,
+  button,
+  .ant-select,
+  .ant-picker {
+    scroll-margin-block: 80px;
+  }
+}
+
+.user-form {
+  .ant-divider {
+    margin: 8px 0 12px;
+    font-size: 14px;
+  }
+  .ant-form-item {
+    margin-bottom: 12px;
+    min-width: 0;
+  }
+  .ant-form-item-row {
+    flex-wrap: nowrap;
+  }
+  .ant-form-item-label {
+    padding: 0;
+  }
+  .ant-form-item-control {
+    min-width: 0;
+  }
+  .ant-picker,
+  .ant-select {
+    width: 100%;
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 0 16px;
+  }
+  &__wide {
+    grid-column: span 2;
+  }
+  &__actions {
+    position: sticky;
+    bottom: -20px;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    padding: 16px 0;
+    background: var(--user-bg);
+    border-top: 1px solid var(--user-border);
+  }
+  &__actions .ant-space {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  > .user-form__actions {
+    margin-top: 4px;
+    padding-block: 12px;
+  }
+}
+
+.user-panel {
+  min-width: 0;
+  &--narrow {
+    max-width: 520px;
+  }
+  &__intro {
+    margin-bottom: 24px;
+  }
+  &__intro h5 {
+    margin: 0 0 8px;
+  }
+  &__label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  &__select {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
+.user-dept-picker {
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr) minmax(0, 2fr);
+  gap: 8px;
+}
+.user-dept-picker > .ant-select {
+  width: 100%;
+}
+.user-dept-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+
+  h5 {
+    margin: 0 0 4px;
+  }
+}
+.user-dept-table {
+  .ant-table-cell {
+    vertical-align: top;
+  }
+  .ant-form-item {
+    margin-bottom: 0;
+  }
+  .ant-form-item-explain {
+    font-size: 12px;
+  }
+  .user-dept-picker {
+    grid-template-columns: minmax(120px, 1fr) minmax(0, 2fr);
+  }
+}
+.user-avatar-editor {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.user-avatar-editor__preview {
+  padding: 8px;
+  border: 1px solid var(--user-border);
+  border-radius: 8px;
+}
+
+@media (min-width: 1200px) {
+  .user-form__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .user-page {
+    @include management-page.mobile;
+  }
+  .user-page__field {
+    flex-basis: 100%;
+  }
+  .user-form__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .user-form__wide {
+    grid-column: auto;
+  }
+  .user-form__actions {
+    bottom: -12px;
+  }
+  .user-dept-picker {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .user-avatar-editor {
+    gap: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .user-page *,
+  .user-page *::before,
+  .user-page *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

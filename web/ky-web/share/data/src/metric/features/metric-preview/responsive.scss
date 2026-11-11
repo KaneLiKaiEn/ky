@@ -1,0 +1,37 @@
+// Only the opted-in page shell responds to its container width.
+.mp-responsive-root {
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+
+  .mp-metric-pages {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 0;
+    min-width: 0;
+  }
+  .mp-pane {
+    height: 100%;
+    min-height: 0;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  .mp-list-slot,
+  .mp-catalog-slot {
+    overflow: auto;
+  }
+  .mp-page-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0 0 auto;
+    gap: 8px;
+    padding: 8px;
+    border-bottom: 1px solid var(--mp-border);
+  }
+  .mp-metric-pages[data-single-page] > .mp-splitter > .ant-splitter-bar {
+    display: none;
+  }
+}

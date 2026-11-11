@@ -1,0 +1,40 @@
+/* Build-time shared document styles. Import only from standalone bootstrap.tsx. */
+:root {
+  color-scheme: light dark;
+  --app-vh: 100vh;
+  --app-vh: 100dvh;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  background: var(--app-theme-bg-layout, #f5f7fb);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow: hidden;
+  background: var(--app-theme-bg-layout, #f5f7fb);
+  color: var(--app-theme-text, #0f172a);
+  font-family:
+    Inter, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+#root {
+  min-height: var(--app-vh);
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

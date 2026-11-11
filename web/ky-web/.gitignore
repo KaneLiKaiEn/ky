@@ -1,0 +1,12 @@
+node_modules/
+dist/
+*.tsbuildinfo
+*.local
+.DS_Store
+@mf-types/
+.mf/
+*.tar
+
+.cursorignore
+.vscode/
+*.code-workspace

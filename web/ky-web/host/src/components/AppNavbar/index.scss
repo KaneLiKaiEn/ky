@@ -1,0 +1,266 @@
+.app-navbar {
+  flex-shrink: 0;
+  z-index: 10;
+  height: 52px;
+  background: var(--app-theme-bg-elevated);
+  overflow: hidden;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    height: 100%;
+    padding: 0 16px;
+  }
+
+  &__left,
+  &__right {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  &__left {
+    flex: 0 1 auto;
+    overflow: hidden;
+  }
+
+  &__slot {
+    display: inline-flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 0;
+    overflow: hidden;
+
+    // 子模块未通过 portal 传入内容时显示默认标题
+    &:empty::before {
+      content: "智慧医院信息系统";
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: var(--app-theme-text);
+      font-size: 15px;
+    }
+  }
+
+  &__right {
+    flex-shrink: 1;
+    max-width: 55%;
+    overflow: hidden;
+  }
+
+  &__dept-trigger,
+  &__user-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    min-width: 0;
+    margin: 0;
+    padding: 4px 8px;
+    overflow: hidden;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    transition:
+      background-color 0.2s,
+      border-color 0.2s,
+      color 0.2s;
+
+    &:hover,
+    &[aria-expanded="true"] {
+      border-color: var(--app-theme-border);
+      background: var(--app-theme-primary-bg);
+
+      .app-navbar__name,
+      .app-navbar__dept-arrow {
+        color: var(--app-theme-primary);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--app-theme-primary);
+      outline-offset: 2px;
+    }
+
+    &[aria-busy="true"] {
+      cursor: wait;
+      opacity: 0.7;
+    }
+  }
+
+  &__field {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  &__name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--app-theme-text);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  &__code {
+    flex-shrink: 0;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: var(--app-theme-bg-fill-alter, rgba(0, 0, 0, 0.04));
+    color: var(--app-theme-text-secondary);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.4;
+    font-variant-numeric: tabular-nums;
+  }
+
+  &__module {
+    flex-shrink: 0;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: var(--app-theme-primary-bg);
+    color: var(--app-theme-primary);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+
+  &__divider {
+    flex-shrink: 0;
+    width: 1px;
+    height: 14px;
+    background: var(--app-theme-border);
+  }
+
+  &__dept-arrow {
+    flex-shrink: 0;
+    color: var(--app-theme-text-secondary);
+    font-size: 10px;
+    transition: color 0.2s;
+  }
+
+  &__dept-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__dept-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-height: 360px;
+    padding: 6px;
+    overflow-y: auto;
+    border: 1px solid var(--app-theme-border, rgba(0, 0, 0, 0.06));
+    border-radius: 10px;
+    background: var(--app-theme-bg-fill-alter, rgba(0, 0, 0, 0.02));
+  }
+
+  &__dept-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    margin: 0;
+    padding: 11px 12px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition:
+      background-color 0.15s,
+      border-color 0.15s,
+      color 0.15s;
+
+    &:hover:not(:disabled) {
+      background: var(--app-theme-bg-elevated, #fff);
+      border-color: var(--app-theme-border, rgba(0, 0, 0, 0.06));
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--app-theme-primary);
+      outline-offset: 1px;
+    }
+
+    &:disabled {
+      cursor: wait;
+      opacity: 0.7;
+    }
+
+    &--active {
+      background: var(--app-theme-primary-bg);
+      border-color: color-mix(
+        in srgb,
+        var(--app-theme-primary) 28%,
+        transparent
+      );
+
+      .app-navbar__dept-item-title {
+        color: var(--app-theme-primary);
+      }
+
+      &:hover:not(:disabled) {
+        background: var(--app-theme-primary-bg);
+        border-color: color-mix(
+          in srgb,
+          var(--app-theme-primary) 40%,
+          transparent
+        );
+      }
+    }
+  }
+
+  &__dept-item-title {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--app-theme-text);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  &__dept-item-badge {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 4px;
+    padding: 1px 8px;
+    border-radius: 999px;
+    background: var(--app-theme-primary);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+
+    .anticon {
+      font-size: 11px;
+    }
+  }
+
+  &__dept-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
+    border: 1px dashed var(--app-theme-border, rgba(0, 0, 0, 0.08));
+    border-radius: 10px;
+    background: var(--app-theme-bg-fill-alter, rgba(0, 0, 0, 0.02));
+  }
+}

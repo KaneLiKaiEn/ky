@@ -1,0 +1,92 @@
+@mixin layout($prefix, $field-basis: 220px, $loading-height: 160px) {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  padding: 20px;
+
+  &__toolbar,
+  &__summary {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &__toolbar {
+    align-items: flex-end;
+    padding: 16px;
+    background: var(--#{$prefix}-bg);
+    border: 1px solid var(--#{$prefix}-border);
+    border-radius: 8px;
+  }
+
+  &__field {
+    display: flex;
+    flex: 1 1 $field-basis;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  &__field > .ant-select {
+    width: 100%;
+  }
+
+  &__actions {
+    margin-left: auto;
+  }
+
+  &__content {
+    flex: 1;
+    min-height: 0;
+    min-width: 0;
+    overflow: auto;
+    padding: 20px;
+    background: var(--#{$prefix}-bg);
+    border: 1px solid var(--#{$prefix}-border);
+    border-radius: 8px;
+  }
+
+  &__summary {
+    margin-bottom: 12px;
+    .ant-typography {
+      margin: 0;
+    }
+    .ant-typography-secondary {
+      margin-top: 4px;
+    }
+  }
+
+  &__loading {
+    display: grid;
+    place-items: center;
+    min-height: $loading-height;
+  }
+
+  &__error {
+    margin-bottom: 16px;
+  }
+
+  &__refresh {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 32px;
+    margin-bottom: 16px;
+  }
+}
+
+// Include at the page's existing mobile breakpoint to keep cascade order.
+@mixin mobile {
+  padding: 12px;
+  gap: 12px;
+
+  &__toolbar,
+  &__content {
+    padding: 12px;
+  }
+}

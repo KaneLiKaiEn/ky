@@ -1,0 +1,103 @@
+.order-notice__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 320px;
+  overflow: auto;
+  scrollbar-gutter: stable;
+}
+
+.order-notice__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.order-notice__head--static {
+  cursor: default;
+}
+
+.order-notice__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.order-notice__chevron {
+  color: var(--app-theme-text-secondary);
+  font-size: 12px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.order-notice__chevron.is-open {
+  transform: rotate(90deg);
+}
+
+.order-notice__label {
+  color: var(--app-theme-text);
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.order-notice__count {
+  min-width: 22px;
+  height: 20px;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  line-height: 20px;
+  text-align: center;
+}
+
+.order-notice__section--verify .order-notice__count {
+  color: var(--app-theme-primary);
+  background: var(--app-theme-primary-bg);
+}
+
+.order-notice__section--end .order-notice__count {
+  color: var(--app-theme-warning);
+  background: var(--app-theme-warning-bg);
+}
+
+.order-notice__section--terminate .order-notice__count {
+  color: var(--app-theme-error);
+  background: var(--app-theme-error-bg);
+}
+
+.order-notice__item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 6px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: var(--app-theme-bg-fill-alter);
+  color: var(--app-theme-text);
+  font-size: 13px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.order-notice__item-text--empty,
+.order-notice__item-count {
+  color: var(--app-theme-text-secondary);
+}
+
+.order-notice__item-count {
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}

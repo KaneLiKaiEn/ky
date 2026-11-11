@@ -1,0 +1,115 @@
+@use "../../styles/management-page";
+
+.role-page {
+  @include management-page.layout("role");
+
+  &__field--role {
+    flex: 2 1 300px;
+  }
+
+  input,
+  button,
+  .ant-select {
+    scroll-margin-block: 80px;
+  }
+
+  @media (max-width: 767px) {
+    @include management-page.mobile;
+
+    &__actions {
+      margin-left: 0;
+    }
+  }
+}
+
+.role-form {
+  .ant-form-item {
+    margin-bottom: 20px;
+    min-width: 0;
+  }
+  .ant-form-item-control {
+    min-width: 0;
+  }
+  .ant-select {
+    width: 100%;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 0 20px;
+  }
+
+  &__wide {
+    grid-column: span 2;
+  }
+
+  &__actions {
+    position: sticky;
+    bottom: -20px;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    padding: 16px 0;
+    border-top: 1px solid var(--role-border);
+    background: var(--role-bg);
+  }
+
+  @media (max-width: 767px) {
+    &__grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    &__wide {
+      grid-column: auto;
+    }
+    &__actions {
+      bottom: -12px;
+    }
+  }
+}
+
+.role-members {
+  &__intro {
+    margin-bottom: 20px;
+    .ant-typography {
+      margin-top: 0;
+    }
+  }
+
+  &__toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  &__search {
+    flex: 1 1 320px;
+    min-width: 0;
+  }
+  &__summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-block: 16px;
+  }
+  &__order {
+    display: inline-flex;
+    align-items: center;
+  }
+  &__drag {
+    cursor: grab;
+  }
+  &__drag:active {
+    cursor: grabbing;
+  }
+  &__row-dragging {
+    opacity: 0.45;
+  }
+  .ant-table-cell {
+    overflow-wrap: anywhere;
+  }
+}

@@ -1,0 +1,134 @@
+$border: var(--app-theme-border, #e5e7eb);
+$bg-container: var(--app-theme-bg-container, #fff);
+$text-secondary: var(--app-theme-text-secondary, #64748b);
+$primary-bg: var(--app-theme-primary-bg, #e6f4ff);
+$primary: var(--app-theme-primary, #1677ff);
+
+.dict-page {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  padding: 12px;
+  box-sizing: border-box;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &__org {
+    width: 240px;
+    max-width: 100%;
+  }
+
+  &__body {
+    display: flex;
+    flex: 1;
+    gap: 12px;
+    min-height: 0;
+    min-width: 0;
+  }
+
+  &__aside {
+    flex: 0 0 420px;
+    min-width: 280px;
+  }
+
+  &__main {
+    flex: 1;
+    min-width: 0;
+  }
+
+  @media (max-width: 767px) {
+    &__body {
+      flex-direction: column;
+      overflow: auto;
+    }
+
+    &__aside,
+    &__main {
+      flex: none;
+      min-width: 0;
+      height: 480px;
+    }
+  }
+}
+
+.dict-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  background: $bg-container;
+  border: 1px solid $border;
+  border-radius: 8px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-shrink: 0;
+    padding: 10px 12px;
+    border-bottom: 1px solid $border;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    font-weight: 600;
+  }
+
+  &__name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__toolbar {
+    flex-shrink: 0;
+    padding: 10px 12px 0;
+  }
+
+  &__body {
+    flex: 1;
+    min-height: 0;
+    padding: 10px 12px 12px;
+    overflow: hidden;
+  }
+
+  &__empty {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    color: $text-secondary;
+  }
+
+  .dict-row {
+    cursor: pointer;
+
+    &--active > td {
+      background: $primary-bg !important;
+    }
+
+    &--active > td:first-child {
+      box-shadow: inset 3px 0 0 $primary;
+    }
+  }
+}
